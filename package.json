@@ -1,0 +1,25 @@
+{
+  "name": "rdf-dataset-faker",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Generate fake RDF datasets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristianvasquez/rdf-dataset-faker.git"
+  },
+  "dependencies": {
+    "ngraph.generators": "^20.1.0",
+    "rdf-ext": "^2.1.0",
+    "@faker-js/faker": "^7.6.0"
+  },
+  "author": "Cristian Vasquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cristianvasquez/rdf-dataset-faker/issues"
+  },
+  "homepage": "https://github.com/cristianvasquez/rdf-dataset-faker#readme"
+}

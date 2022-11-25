@@ -2,6 +2,13 @@
 
 Generate fake RDF datasets 
 
+## Libs
+
+- [ngraph.generators](https://github.com/anvaka/ngraph.generators)
+- [faker-js/faker](https://github.com/faker-js/faker)
+
+## Example
+
 ```js
 import graphGenerator from 'ngraph.generators'
 import rdf from 'rdf-ext'

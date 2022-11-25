@@ -3,8 +3,6 @@ import rdf from 'rdf-ext'
 import {
   attachNewAddress, newPerson, relatePeople,
 } from './generators/index.js'
-import { ns } from './namespaces.js'
-
 
 function createGraph (nGraph, { namespace, namedGraph }) {
 
@@ -24,4 +22,4 @@ function createGraph (nGraph, { namespace, namedGraph }) {
   return pointer.dataset
 }
 
-export {createGraph}
+export { createGraph }

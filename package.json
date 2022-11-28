@@ -1,6 +1,6 @@
 {
   "name": "rdf-dataset-faker",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "description": "Generate fake RDF datasets",
   "main": "index.js",

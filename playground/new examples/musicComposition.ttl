@@ -1,0 +1,26 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+
+<person>
+    a           schema:Person ;
+    schema:name "John Lennon" .
+
+<person2>
+    a           schema:Person ;
+    schema:name "Paul McCartney" .
+
+<org>
+    a           schema:Organization ;
+    schema:name "Northern Songs, Ltd." .
+
+<composition>
+    a                    schema:MusicComposition ;
+    schema:composer      <person>, <person2> ;
+    schema:datePublished "1967"^^schema:Date ;
+    schema:iswcCode      "T-010.140.236-1" ;
+    schema:lyrics        [ rdf:type          schema:CreativeWork ;
+                           schema:inLanguage "EN" ;
+                           schema:text       "I  read the news today oh boy..." ; ] ;
+    schema:name          "A Day in the Life" ;
+    schema:publisher     <org> .
+

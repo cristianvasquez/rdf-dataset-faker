@@ -1,0 +1,28 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+
+_:b0 a schema:Invoice ;
+     schema:accountId "xxxx-xxxx-xxxx-1234" ;
+     schema:billingPeriod "P30D" ;
+     schema:broker [
+           rdf:type schema:BankOrCreditUnion ;
+           schema:name "ACME Bank" ;
+       ] ;
+     schema:customer [
+           rdf:type schema:Person ;
+           schema:name "Jane Doe" ;
+       ] ;
+     schema:description "January 2015 Visa bill." ;
+     schema:minimumPaymentDue [
+           rdf:type schema:PriceSpecification ;
+           schema:price 15 ;
+           schema:priceCurrency "USD" ;
+       ] ;
+     schema:paymentDueDate "2015-01-30T12:00:00"^^schema:Date ;
+     schema:paymentStatus "https://schema.org/PaymentDue" ;
+     schema:totalPaymentDue [
+           rdf:type schema:PriceSpecification ;
+           schema:price 200 ;
+           schema:priceCurrency "USD" ;
+       ] ;
+     schema:url <http://acmebank.com/invoice.pdf> .

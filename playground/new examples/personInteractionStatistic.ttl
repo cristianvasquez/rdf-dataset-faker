@@ -1,0 +1,14 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+
+_:b0 a schema:Person ;
+     schema:interactionStatistic [
+           rdf:type schema:InteractionCounter ;
+           schema:interactionType "https://schema.org/LikeAction" ;
+           schema:userInteractionCount 1170 ;
+       ], [
+           rdf:type schema:InteractionCounter ;
+           schema:interactionType "https://schema.org/FollowAction" ;
+           schema:userInteractionCount 145098 ;
+       ] ;
+     schema:name "Jane Doe" .

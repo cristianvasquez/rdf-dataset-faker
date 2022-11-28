@@ -1,0 +1,37 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+
+_:b0 a schema:MusicEvent ;
+     schema:location [
+           rdf:type schema:MusicVenue ;
+           schema:address "220 S. Michigan Ave, Chicago, Illinois, USA" ;
+           schema:name "Chicago Symphony Center" ;
+       ] ;
+     schema:name "Shostakovich Leningrad" ;
+     schema:offers [
+           rdf:type schema:Offer ;
+           schema:availability "https://schema.org/InStock" ;
+           schema:price "40" ;
+           schema:priceCurrency "USD" ;
+           schema:url <examples/ticket/12341234> ;
+       ] ;
+     schema:performer [
+           rdf:type schema:MusicGroup ;
+           schema:name "Chicago Symphony Orchestra" ;
+           schema:sameAs <http://cso.org/>, <http://en.wikipedia.org/wiki/Chicago_Symphony_Orchestra> ;
+       ], [
+           rdf:type schema:Person ;
+           schema:image <examples/jvanzweden_s.jpg> ;
+           schema:name "Jaap van Zweden" ;
+           schema:sameAs <http://www.jaapvanzweden.com/> ;
+       ] ;
+     schema:startDate "2014-05-23T20:00"^^schema:Date ;
+     schema:workPerformed [
+           rdf:type schema:CreativeWork ;
+           schema:name "Britten Four Sea Interludes and Passacaglia from Peter Grimes" ;
+           schema:sameAs <http://en.wikipedia.org/wiki/Peter_Grimes> ;
+       ], [
+           rdf:type schema:CreativeWork ;
+           schema:name "Shostakovich Symphony No. 7 (Leningrad)" ;
+           schema:sameAs <http://en.wikipedia.org/wiki/Symphony_No._7_(Shostakovich)> ;
+       ] .

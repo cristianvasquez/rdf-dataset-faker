@@ -1,0 +1,27 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+
+_:b0 a schema:Person ;
+     schema:hasOccupation [
+           rdf:type schema:Occupation ;
+           schema:educationRequirements "PhD in parapsychology" ;
+           schema:name "Parapsychologist" ;
+       ] ;
+     schema:name "Peter Venkman" .
+
+_:b1 a schema:Person ;
+     schema:hasOccupation [
+           rdf:type schema:Role ;
+           schema:endDate "1906"^^schema:Date ;
+           schema:hasOccupation [
+                        rdf:type schema:Occupation ;
+                        schema:name "Patent examiner" ;
+                        schema:occupationalCategory "23-2099.00" ;
+                    ] ;
+           schema:startDate "1901"^^schema:Date ;
+       ], [
+           rdf:type schema:Occupation ;
+           schema:educationRequirements "PhD in Physics" ;
+           schema:name "Professor of Physics" ;
+       ] ;
+     schema:name "Albert Einstein" .

@@ -1,0 +1,17 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+
+_:b0 a schema:Person ;
+     schema:name "Christopher Froome" ;
+     schema:sponsor [
+           rdf:type schema:Organization ;
+           schema:name "Sky" ;
+           schema:url <http://www.skysports.com/> ;
+       ] .
+
+_:b1 a schema:Person ;
+     schema:name "Rose Tyler" ;
+     schema:sponsor [
+           rdf:type schema:Person ;
+           schema:name "Sarah Jane Smith" ;
+       ] .

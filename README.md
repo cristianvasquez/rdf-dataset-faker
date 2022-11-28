@@ -17,7 +17,7 @@ import { createGraph } from './src/graph.js'
 const nGraph = graphGenerator.wattsStrogatz(100, 20, 0.01)
 const ex = rdf.namespace('http://example.org/')
 
-const dataset = createGraph(nGraph, { namespace: ex, named: ex['named'] })
+const dataset = createGraph(nGraph)
 
 console.log(dataset.toString())
 console.log('Produced', dataset.size, 'quads')

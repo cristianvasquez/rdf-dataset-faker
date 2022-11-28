@@ -1,0 +1,46 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+
+_:b0 a schema:Invoice ;
+     schema:accountId "xxxx-xxxx-xxxx-1234" ;
+     schema:broker [
+           rdf:type schema:LocalBusiness ;
+           schema:name "ACME Home Heating" ;
+       ] ;
+     schema:customer [
+           rdf:type schema:Person ;
+           schema:name "Jane Doe" ;
+       ] ;
+     schema:minimumPaymentDue [
+           rdf:type schema:PriceSpecification ;
+           schema:price 0 ;
+           schema:priceCurrency "USD" ;
+       ] ;
+     schema:paymentDueDate "2015-01-30"^^schema:Date ;
+     schema:paymentStatus "https://schema.org/PaymentComplete" ;
+     schema:referencesOrder [
+           rdf:type schema:Order ;
+           schema:description "furnace" ;
+           schema:orderDate "2014-12-01"^^schema:Date ;
+           schema:orderNumber "123ABC" ;
+           schema:orderedItem [
+                        rdf:type schema:Product ;
+                        schema:name "ACME Furnace 3000" ;
+                        schema:productID "ABC123" ;
+                    ] ;
+           schema:paymentMethod "http://purl.org/goodrelations/v1#ByInvoice" ;
+       ], [
+           rdf:type schema:Order ;
+           schema:description "furnace installation" ;
+           schema:orderDate "2014-12-02"^^schema:Date ;
+           schema:orderedItem [
+                        rdf:type schema:Service ;
+                        schema:description "furnace installation" ;
+                    ] ;
+           schema:paymentMethod "http://purl.org/goodrelations/v1#ByInvoice" ;
+       ] ;
+     schema:totalPaymentDue [
+           rdf:type schema:PriceSpecification ;
+           schema:price 0 ;
+           schema:priceCurrency "USD" ;
+       ] .

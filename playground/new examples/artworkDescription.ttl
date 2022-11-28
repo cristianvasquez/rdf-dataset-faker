@@ -1,0 +1,23 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+
+_:b0 a schema:VisualArtwork ;
+     schema:alternateName "The Treachery of Images" ;
+     schema:artMedium "oil" ;
+     schema:artworkSurface "canvas" ;
+     schema:creator [
+           rdf:type schema:Person ;
+           schema:name "René Magritte" ;
+           schema:sameAs <https://www.freebase.com/m/06h88> ;
+       ] ;
+     schema:description "The painting shows a pipe. Below it, Magritte..." ;
+     schema:height [
+           rdf:type schema:Distance ;
+           schema:name "635 mm" ;
+       ] ;
+     schema:image <http://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg> ;
+     schema:name "La trahison des images" ;
+     schema:width [
+           rdf:type schema:Distance ;
+           schema:name "940 mm" ;
+       ] .

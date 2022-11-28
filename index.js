@@ -5,10 +5,21 @@ import { createGraph } from './src/graph.js'
 // See generators
 // https://github.com/anvaka/ngraph.generators
 
-const nGraph = graphGenerator.wattsStrogatz(100, 20, 0.01)
-const ex = rdf.namespace('http://example.org/')
+function fakeGraph (nGraph, { namespace, namedGraph }) {
+  const space = namespace ?? rdf.namespace('http://example.org/')
+  const named = namedGraph ?? space['named']
+  return createGraph(nGraph, { namespace: space, namedGraph: named })
+}
 
-const dataset = createGraph(nGraph, { namespace: ex, named: ex['named'] })
+function fakePeopleNetwork ({ namespace, namedGraph }) {
+  const nGraph = graphGenerator.wattsStrogatz(100, 20, 0.01)
+  return fakeGraph(nGraph, { namespace, namedGraph })
+}
 
-console.log(dataset.toString())
-console.log('Produced', dataset.size, 'quads')
+function fakeLadder (steps, { namespace, namedGraph }) {
+  const n = steps ?? 10
+  const nGraph = graphGenerator.ladder(n)
+  return fakeGraph(nGraph, { namespace, namedGraph })
+}
+
+export { fakeGraph, fakePeopleNetwork, fakeLadder }

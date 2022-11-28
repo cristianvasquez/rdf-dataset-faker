@@ -1,0 +1,49 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+
+_:b0 a schema:RentalCarReservation ;
+     schema:dropoffLocation [
+           rdf:type schema:Place ;
+           schema:address [
+                        rdf:type schema:PostalAddress ;
+                        schema:addressCountry "US" ;
+                        schema:addressLocality "Los Angeles" ;
+                        schema:addressRegion "CA" ;
+                        schema:postalCode "94043" ;
+                        schema:streetAddress "1234 First Street" ;
+                    ] ;
+           schema:name "Hertz LAX" ;
+       ] ;
+     schema:dropoffTime "2017-08-06T20:00:00-07:00" ;
+     schema:pickupLocation [
+           rdf:type schema:Place ;
+           schema:address [
+                        rdf:type schema:PostalAddress ;
+                        schema:addressCountry "US" ;
+                        schema:addressLocality "San Diego" ;
+                        schema:addressRegion "CA" ;
+                        schema:postalCode "94043" ;
+                        schema:streetAddress "1500 Orange Avenue" ;
+                    ] ;
+           schema:name "Hertz San Diego Airport" ;
+       ] ;
+     schema:pickupTime "2017-08-05T16:00:00-07:00" ;
+     schema:provider [
+           rdf:type schema:Organization ;
+           schema:name "Hertz" ;
+       ] ;
+     schema:reservationFor [
+           rdf:type schema:Car ;
+           schema:brand [
+                        rdf:type schema:Brand ;
+                        schema:name "Honda" ;
+                    ] ;
+           schema:model "Civic" ;
+           schema:name "Economy Class Car" ;
+       ] ;
+     schema:reservationId "546323" ;
+     schema:reservationStatus "https://schema.org/ReservationConfirmed" ;
+     schema:underName [
+           rdf:type schema:Person ;
+           schema:name "John Smith" ;
+       ] .

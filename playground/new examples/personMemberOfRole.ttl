@@ -1,0 +1,15 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+
+_:b0 a schema:SportsTeam ;
+     schema:member [
+           rdf:type schema:OrganizationRole ;
+           schema:endDate "1992"^^schema:Date ;
+           schema:member [
+                        rdf:type schema:Person ;
+                        schema:name "Joe Montana" ;
+                    ] ;
+           schema:roleName "Quarterback" ;
+           schema:startDate "1979"^^schema:Date ;
+       ] ;
+     schema:name "San Francisco 49ers" .

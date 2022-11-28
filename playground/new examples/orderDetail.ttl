@@ -1,0 +1,41 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+
+_:b0 a schema:Order ;
+     schema:customer [
+           rdf:type schema:Person ;
+           schema:name "Jane Doe" ;
+       ] ;
+     schema:orderedItem [
+           rdf:type schema:OrderItem ;
+           schema:orderDelivery [
+                        rdf:type schema:ParcelDelivery ;
+                        schema:expectedArrivalFrom "2015-03-10"^^schema:Date ;
+                    ] ;
+           schema:orderItemNumber "abc123" ;
+           schema:orderItemStatus "https://schema.org/OrderDelivered" ;
+           schema:orderQuantity 1 ;
+           schema:orderedItem [
+                        rdf:type schema:Product ;
+                        schema:name "Widget" ;
+                    ] ;
+       ], [
+           rdf:type schema:OrderItem ;
+           schema:orderDelivery [
+                        rdf:type schema:ParcelDelivery ;
+                        schema:expectedArrivalFrom "2015-03-15"^^schema:Date ;
+                        schema:expectedArrivalUntil "2015-03-18"^^schema:Date ;
+                    ] ;
+           schema:orderItemNumber "def456" ;
+           schema:orderItemStatus "https://schema.org/OrderInTransit" ;
+           schema:orderQuantity 3 ;
+           schema:orderedItem [
+                        rdf:type schema:Product ;
+                        schema:name "Widget accessories" ;
+                    ] ;
+       ] ;
+     schema:seller [
+           rdf:type schema:Organization ;
+           schema:name "ACME Supplies" ;
+       ] .
+

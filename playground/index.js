@@ -8,7 +8,7 @@ import { fakeGraph } from '../index.js'
 const nGraph = graphGenerator.wattsStrogatz(100, 20, 0.01)
 const ex = rdf.namespace('http://example.org/')
 
-const dataset = fakeGraph(nGraph, { namespace: ex, namedGraph: ex['named'] })
+const dataset = fakeGraph(nGraph, { namespace: ex })
 
 console.log(dataset.toString())
 console.log('Produced', dataset.size, 'quads')

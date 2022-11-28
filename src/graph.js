@@ -4,7 +4,7 @@ import {
   attachNewAddress, newPerson, relatePeople,
 } from './generators/index.js'
 
-function createGraph (nGraph, { namespace, namedGraph }) {
+function createGraph (nGraph, { namespace }) {
 
   const pointer = rdf.clownface({ dataset: rdf.dataset(), factory: rdf })
 

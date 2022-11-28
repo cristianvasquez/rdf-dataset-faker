@@ -7,8 +7,16 @@ import { createGraph } from './src/graph.js'
 
 function fakeGraph (nGraph, { namespace, namedGraph }) {
   const space = namespace ?? rdf.namespace('http://example.org/')
-  const named = namedGraph ?? space['named']
-  return createGraph(nGraph, { namespace: space, namedGraph: named })
+
+  const dataset = createGraph(nGraph, { namespace: space })
+
+  if (namedGraph) {
+    const datasetWithNamed = [...dataset].map(
+      quad => rdf.quad(quad.subject, quad.predicate, quad.object, namedGraph))
+    return rdf.dataset().addAll(datasetWithNamed)
+  }
+  return dataset
+
 }
 
 function fakePeopleNetwork ({ namespace, namedGraph }) {

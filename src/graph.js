@@ -4,19 +4,17 @@ import {
   attachNewAddress, newPerson, relatePeople,
 } from './generators/index.js'
 
-function createGraph (nGraph, { namespace }) {
+function createGraph (nGraph, { uriResolver }) {
 
   const pointer = rdf.clownface({ dataset: rdf.dataset(), factory: rdf })
 
-  const uri = (id) => namespace[id]
-
   nGraph.forEachNode(function (node) {
-    const person = newPerson({ pointer }, uri(node.id))
+    const person = newPerson({ pointer }, uriResolver(node.id))
     attachNewAddress({ pointer: person }, rdf.blankNode())
   })
 
   nGraph.forEachLink(function (link) {
-    relatePeople({ pointer }, uri(link.fromId), uri(link.toId))
+    relatePeople({ pointer }, uriResolver(link.fromId), uriResolver(link.toId))
   })
 
   return pointer.dataset

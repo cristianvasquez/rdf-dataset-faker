@@ -7,13 +7,17 @@ import { fakeGraph, fakeLadder } from '../index.js'
 
 const ex = rdf.namespace('http://example.org/')
 
-const uriResolver = (id) => {
-  if (id === 1){
-    return ex[1]
-  } else {
-    return rdf.blankNode()
-  }
+const uris = {
+  1:ex[1]
 }
+
+const uriResolver = (id) => {
+  if (!uris[id]){
+    uris[id] = rdf.blankNode()
+  }
+  return uris[id]
+}
+
 
 const dataset = fakeLadder(20, { uriResolver })
 

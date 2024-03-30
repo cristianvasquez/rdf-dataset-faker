@@ -13,9 +13,10 @@
     "url": "git+https://github.com/cristianvasquez/rdf-dataset-faker.git"
   },
   "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "grapoi": "^1.1.2",
     "ngraph.generators": "^20.1.0",
-    "rdf-ext": "^2.1.0",
-    "@faker-js/faker": "^7.6.0"
+    "rdf-ext": "^2.5.1"
   },
   "devDependencies": {
     "@changesets/cli": "^2.25.2"

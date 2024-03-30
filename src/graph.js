@@ -1,12 +1,14 @@
-import graphGenerator from 'ngraph.generators'
+import grapoi from 'grapoi'
 import rdf from 'rdf-ext'
 import {
-  attachNewAddress, newPerson, relatePeople,
+  attachNewAddress,
+  newPerson,
+  relatePeople,
 } from './generators/index.js'
 
 function createGraph (nGraph, { uriResolver }) {
 
-  const pointer = rdf.clownface({ dataset: rdf.dataset(), factory: rdf })
+  const pointer = grapoi({ dataset: rdf.dataset(), factory: rdf })
 
   nGraph.forEachNode(function (node) {
     const person = newPerson({ pointer }, uriResolver(node.id))
